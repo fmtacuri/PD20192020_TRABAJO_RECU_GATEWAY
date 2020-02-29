@@ -1,0 +1,18 @@
+El servidor fabio se encarga del enrutamiento de los servicios registrados en el consul, para ello es necesario definir una lista de conecciones con:
+List<String> tags = Arrays.asList("urlprefix-/MyRegister");
+
+y agregamos un tag para que haya coneccion entre el consul y el Fabio:
+
+NewService s = new NewService();
+		
+//Se debe agregar un tag para que haya la conexion entre fabio y consul
+s.setTags(tags);
+
+Funcionalidad es:
+Arrancar el archivo Fabio.exe a la vez con el consul.
+
+Podemos consultar los servidores registrados con:
+
+localhost:9998 apuntando al puerto 9998
+
+y mapeamos al puerto 9999 en la aplicacion web.
